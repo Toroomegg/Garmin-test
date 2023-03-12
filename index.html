@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Garmin</title>
+  <title>GarminWeb</title>
   <style>
     * {
       padding: 0;
@@ -55,7 +55,7 @@
     <div id="unity-progress-bar">
     </div>
   </div>
-  <script src="Build/Garmin.loader.js"></script>
+  <script src="Build/GarminWebGame.loader.js"></script>
   <script>
     const maxPixelRatioMobile = 2.0;
     const maxPixelRatioDesktop = 1.5;
@@ -65,14 +65,14 @@
     var pixelRatio = Math.min(window.devicePixelRatio, maxDevicePixelRatio);
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/Garmin.loader.js";
+    var loaderUrl = buildUrl + "/GarminWebGame.loader.js";
     var config = {
-      dataUrl: buildUrl + "/Garmin.data.unityweb",
-      frameworkUrl: buildUrl + "/Garmin.framework.js.unityweb",
-      codeUrl: buildUrl + "/Garmin.wasm.unityweb",
+      dataUrl: buildUrl + "/GarminWebGame.data.unityweb",
+      frameworkUrl: buildUrl + "/GarminWebGame.framework.js.unityweb",
+      codeUrl: buildUrl + "/GarminWebGame.wasm.unityweb",
       streamingAssetsUrl: "StreamingAssets",
-      companyName: "DefaultCompany",
-      productName: "Garmin",
+      companyName: "Eggy",
+      productName: "GarminWeb",
       productVersion: "1.0",
       devicePixelRatio: pixelRatio
     };
@@ -87,7 +87,7 @@
       createUnityInstance(canvas, config, function(progress) {
         progressBar.style.width = 100 * progress + "%";
       }).then(function(unityInstance) {
-          window.unityInstance = unityInstance;
+        window.unityInstance = unityInstance;
         this.firebase = firebase;
         loadingBar.style.display = "none";
       }).catch(function(message) {
